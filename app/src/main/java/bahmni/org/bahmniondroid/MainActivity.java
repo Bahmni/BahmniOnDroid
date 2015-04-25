@@ -8,14 +8,15 @@ import bahmni.org.bahmniondroid.clients.ResourceClient;
 
 
 public class MainActivity extends XWalkBaseActivity {
-    private static final String TAG = MainActivity.class.getName();
+    public static final String SERVER = "https://bahmni.twhosted.com/bahmni/";
+    private final String TAG = this.getClass().getName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mXWalkView = (XWalkView) findViewById(R.id.bahmni);
-        mXWalkView.setResourceClient(new ResourceClient(mXWalkView));
-        mXWalkView.load("https://bahmni.twhosted.com/home", null);
+        mXWalkView.setResourceClient(new ResourceClient(mXWalkView, getAssets()));
+        mXWalkView.load(SERVER + "home", null);
     }
 }
