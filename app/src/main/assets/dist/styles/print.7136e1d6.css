@@ -1,0 +1,709 @@
+/* settings */
+/*  _colors - bahmniTheme:  */
+/*  _components - bahmniTheme: */
+/*  _different shades of grey/gray:  */
+/* any text will not be lighter than this */
+/* any border will not be lighter than this */
+/* any background will not be lighter than this */
+/*  _spacing padding - margin:  */
+/* _fonts */
+/* _mixins */
+@page {
+  margin-left: 0.5cm;
+  margin-right: 0.5cm;
+  margin-top: 0.4cm;
+  margin-bottom: 0.3cm;
+}
+/* line 10, print.scss */
+body,
+body pre {
+  font-family: Arial, sans-serif;
+  font-size: 10pt;
+  color: #000;
+  background: #fff;
+}
+
+/* line 18, print.scss */
+body pre {
+  white-space: pre-wrap;
+}
+
+/* line 22, print.scss */
+p,
+h1,
+h2,
+h3,
+table,
+tr,
+td,
+div,
+span,
+li {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 36, print.scss */
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+/* line 42, print.scss */
+.print-center {
+  text-align: center;
+}
+
+/* line 46, print.scss */
+.registrationCard-print-table {
+  width: 150mm;
+  height: 83mm;
+  overflow: scroll;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+
+/* line 54, print.scss */
+.registrationCard-print-table td.registrationCard-photo {
+  padding-top: 2px;
+}
+
+/* line 58, print.scss */
+.print-table-left {
+  width: 77mm;
+}
+
+/* line 62, print.scss */
+.print-table-header {
+  text-align: center;
+  margin-top: 7.5pt;
+  text-align: center;
+}
+
+/* line 68, print.scss */
+.print-table-left-body {
+  font-size: 4mm;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 15px;
+}
+
+/* line 75, print.scss */
+.print-table-left-body li {
+  margin: 0px;
+  padding: 0px 0px 5px 0px;
+  line-height: 18px;
+}
+
+/* line 81, print.scss */
+.caution {
+  text-align: center;
+  line-height: 20px;
+}
+
+/* line 86, print.scss */
+.caution h3 {
+  line-height: 25px;
+  margin-bottom: 6px;
+  margin-top: 12px;
+}
+
+/* line 92, print.scss */
+.print-table-right {
+  width: 77mm;
+}
+
+/* line 96, print.scss */
+.print-table-right .logo {
+  text-align: center;
+  width: 12mm;
+  padding: 0px;
+  margin: 0px;
+  height: 12mm;
+}
+
+/* line 104, print.scss */
+.print-table-right-header {
+  text-align: center;
+  width: 42mm;
+  text-align: left;
+  height: 12mm;
+}
+
+/* line 111, print.scss */
+.registrationCard-location {
+  padding: 5px 8px 8px 8px;
+}
+
+/* line 115, print.scss */
+.registrationCard-details {
+  padding: 0mm 5mm 0mm 5mm;
+}
+
+/* line 119, print.scss */
+.registrationCard-details-name {
+  width: 70px;
+}
+
+/* line 123, print.scss */
+.registrationCard-details-seperator {
+  width: 20px;
+  text-align: center;
+}
+
+/* line 128, print.scss */
+.hindi-text {
+  vertical-align: bottom;
+}
+
+/* line 132, print.scss */
+.pgContainer {
+  height: auto;
+  min-height: initial;
+}
+
+/** Print Style for dashboard **/
+/* line 138, print.scss */
+.print-wrapper {
+  font-family: Arial, sans-serif;
+  font-size: 9pt;
+  padding: 10px 20px 0;
+  max-width: 21cm;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+/* line 145, print.scss */
+.print-wrapper a {
+  color: #333;
+}
+/* line 148, print.scss */
+.print-wrapper strong {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+/* line 152, print.scss */
+.print-wrapper .visible-print {
+  display: initial;
+}
+/* line 155, print.scss */
+.print-wrapper .hidden-print {
+  display: none;
+}
+/* line 158, print.scss */
+.print-wrapper .placeholder-text {
+  font-size: 9pt;
+  padding: 2px 10px;
+  border: 0;
+}
+/* line 163, print.scss */
+.print-wrapper .print-header {
+  text-align: center;
+  color: #000;
+}
+/* line 166, print.scss */
+.print-wrapper .print-header .logo {
+  width: 35px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: -40px;
+}
+/* line 172, print.scss */
+.print-wrapper .print-header h1 {
+  font-size: 14pt;
+  margin-bottom: 0;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+/* line 178, print.scss */
+.print-wrapper .print-header h2 {
+  font-size: 10pt;
+  margin-bottom: 5px;
+  color: #000;
+  text-transform: uppercase;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  text-decoration: underline;
+  font-weight: bold;
+}
+/* line 190, print.scss */
+.print-wrapper .hierarchy ul li .tree-list-item {
+  padding: 0 5px !important;
+  background: none !important;
+}
+/* line 193, print.scss */
+.print-wrapper .hierarchy ul li .tree-list-item i[class^="icon-"] {
+  display: none;
+}
+/* line 196, print.scss */
+.print-wrapper .hierarchy ul li .tree-list-item .obs-date {
+  font-weight: bold;
+  font-size: 9pt;
+}
+/* line 202, print.scss */
+.print-wrapper .dashboard-sections {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  float: none;
+}
+/* line 208, print.scss */
+.print-wrapper .section-grid {
+  border: 0;
+}
+/* line 211, print.scss */
+.print-wrapper .dashboard-section,
+.print-wrapper .visit-summary-page section.block {
+  border: 0;
+  margin: 0 0 5px;
+  font-size: 7.5pt;
+}
+/* line 217, print.scss */
+.print-wrapper h2.section-title {
+  text-align: left;
+  color: #000;
+  font-size: 9.5pt;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-transform: uppercase;
+  text-decoration: underline;
+  background: none;
+}
+/* line 231, print.scss */
+.print-wrapper h2.section-title [class^="icon-"] {
+  display: none;
+}
+/* line 235, print.scss */
+.print-wrapper h2.section-title.has-link .title-link {
+  text-decoration: none;
+  border-bottom: 0;
+}
+/* line 241, print.scss */
+.print-wrapper section.block,
+.print-wrapper .dashboard-section {
+  border-radius: 0;
+  border: 0;
+}
+/* line 245, print.scss */
+.print-wrapper section.block h2.section-title,
+.print-wrapper .dashboard-section h2.section-title {
+  text-align: left;
+  color: #000;
+  font-size: 9.5pt;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  line-height: normal;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+/* line 258, print.scss */
+.print-wrapper section.block h2.section-title [class^="icon-"],
+.print-wrapper .dashboard-section h2.section-title [class^="icon-"] {
+  display: none;
+}
+/* line 262, print.scss */
+.print-wrapper section.block .form-field,
+.print-wrapper .dashboard-section .form-field {
+  border: 0;
+}
+/* line 264, print.scss */
+.print-wrapper section.block .form-field .time,
+.print-wrapper .dashboard-section .form-field .time {
+  display: none;
+}
+/* line 268, print.scss */
+.print-wrapper section.block .laborder-sub-heading,
+.print-wrapper .dashboard-section .laborder-sub-heading {
+  font-size: 9pt;
+  font-weight: bold;
+  border: none;
+  padding: 0;
+  background: none;
+}
+/* line 274, print.scss */
+.print-wrapper section.block .laborder-sub-heading .toggle-btn, .print-wrapper section.block .laborder-sub-heading [class^="icon-"], .print-wrapper section.block .laborder-sub-heading [class*=" icon-"],
+.print-wrapper .dashboard-section .laborder-sub-heading .toggle-btn,
+.print-wrapper .dashboard-section .laborder-sub-heading [class^="icon-"],
+.print-wrapper .dashboard-section .laborder-sub-heading [class*=" icon-"] {
+  display: none;
+}
+/* line 278, print.scss */
+.print-wrapper section.block table,
+.print-wrapper .dashboard-section table {
+  border-collapse: separate;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  overflow: visible;
+}
+/* line 285, print.scss */
+.print-wrapper section.block table.repeated-table,
+.print-wrapper .dashboard-section table.repeated-table {
+  margin-bottom: 5px;
+}
+/* line 287, print.scss */
+.print-wrapper section.block table.repeated-table:last-child,
+.print-wrapper .dashboard-section table.repeated-table:last-child {
+  margin-bottom: 0;
+}
+/* line 292, print.scss */
+.print-wrapper section.block table thead tr,
+.print-wrapper .dashboard-section table thead tr {
+  border: 0;
+}
+/* line 294, print.scss */
+.print-wrapper section.block table thead tr th,
+.print-wrapper .dashboard-section table thead tr th {
+  border: 0;
+  font-size: 9pt;
+  font-weight: bold;
+  padding: 1px 5px;
+  color: #000;
+  background: none;
+  font-family: Arial, sans-serif;
+}
+/* line 303, print.scss */
+.print-wrapper section.block table thead tr .toggle-btn,
+.print-wrapper .dashboard-section table thead tr .toggle-btn {
+  display: none;
+}
+/* line 310, print.scss */
+.print-wrapper section.block table tbody tr, .print-wrapper section.block table tbody tr td, .print-wrapper section.block table tbody tr th,
+.print-wrapper .dashboard-section table tbody tr,
+.print-wrapper .dashboard-section table tbody tr td,
+.print-wrapper .dashboard-section table tbody tr th {
+  border: 0;
+  font-size: 9pt;
+  padding: 0 5px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+/* line 317, print.scss */
+.print-wrapper section.block table tbody tr .name,
+.print-wrapper section.block table tbody tr .drug,
+.print-wrapper section.block table tbody tr .testUnderPanel,
+.print-wrapper .dashboard-section table tbody tr .name,
+.print-wrapper .dashboard-section table tbody tr .drug,
+.print-wrapper .dashboard-section table tbody tr .testUnderPanel {
+  width: 45%;
+}
+/* line 322, print.scss */
+.print-wrapper section.block table tbody tr .value,
+.print-wrapper section.block table tbody tr .dosage,
+.print-wrapper .dashboard-section table tbody tr .value,
+.print-wrapper .dashboard-section table tbody tr .dosage {
+  width: auto;
+}
+/* line 326, print.scss */
+.print-wrapper section.block table tbody tr .value .is-abnormal,
+.print-wrapper .dashboard-section table tbody tr .value .is-abnormal {
+  font-weight: bold;
+  color: #333 !important;
+}
+/* line 330, print.scss */
+.print-wrapper section.block table tbody tr .toggle-btn,
+.print-wrapper .dashboard-section table tbody tr .toggle-btn {
+  display: none;
+}
+/* line 333, print.scss */
+.print-wrapper section.block table tbody tr .days,
+.print-wrapper .dashboard-section table tbody tr .days {
+  min-width: 60px;
+}
+/* line 338, print.scss */
+.print-wrapper section.block table .drug-discontinued,
+.print-wrapper .dashboard-section table .drug-discontinued {
+  display: none;
+}
+/* line 341, print.scss */
+.print-wrapper section.block table.h-scroll, .print-wrapper section.block table.pivot-table,
+.print-wrapper .dashboard-section table.h-scroll,
+.print-wrapper .dashboard-section table.pivot-table {
+  border-collapse: collapse;
+}
+/* line 344, print.scss */
+.print-wrapper section.block table.h-scroll tbody tr, .print-wrapper section.block table.h-scroll thead tr, .print-wrapper section.block table.pivot-table tbody tr, .print-wrapper section.block table.pivot-table thead tr,
+.print-wrapper .dashboard-section table.h-scroll tbody tr,
+.print-wrapper .dashboard-section table.h-scroll thead tr,
+.print-wrapper .dashboard-section table.pivot-table tbody tr,
+.print-wrapper .dashboard-section table.pivot-table thead tr {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+/* line 348, print.scss */
+.print-wrapper section.block table.h-scroll tbody tr td, .print-wrapper section.block table.h-scroll tbody tr th, .print-wrapper section.block table.h-scroll thead tr td, .print-wrapper section.block table.h-scroll thead tr th, .print-wrapper section.block table.pivot-table tbody tr td, .print-wrapper section.block table.pivot-table tbody tr th, .print-wrapper section.block table.pivot-table thead tr td, .print-wrapper section.block table.pivot-table thead tr th,
+.print-wrapper .dashboard-section table.h-scroll tbody tr td,
+.print-wrapper .dashboard-section table.h-scroll tbody tr th,
+.print-wrapper .dashboard-section table.h-scroll thead tr td,
+.print-wrapper .dashboard-section table.h-scroll thead tr th,
+.print-wrapper .dashboard-section table.pivot-table tbody tr td,
+.print-wrapper .dashboard-section table.pivot-table tbody tr th,
+.print-wrapper .dashboard-section table.pivot-table thead tr td,
+.print-wrapper .dashboard-section table.pivot-table thead tr th {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  font-size: 9pt;
+  vertical-align: top;
+  min-height: 18px;
+  height: 18px;
+  font-weight: normal;
+}
+/* line 357, print.scss */
+.print-wrapper section.block table.h-scroll tbody tr td span, .print-wrapper section.block table.h-scroll tbody tr th span, .print-wrapper section.block table.h-scroll thead tr td span, .print-wrapper section.block table.h-scroll thead tr th span, .print-wrapper section.block table.pivot-table tbody tr td span, .print-wrapper section.block table.pivot-table tbody tr th span, .print-wrapper section.block table.pivot-table thead tr td span, .print-wrapper section.block table.pivot-table thead tr th span,
+.print-wrapper .dashboard-section table.h-scroll tbody tr td span,
+.print-wrapper .dashboard-section table.h-scroll tbody tr th span,
+.print-wrapper .dashboard-section table.h-scroll thead tr td span,
+.print-wrapper .dashboard-section table.h-scroll thead tr th span,
+.print-wrapper .dashboard-section table.pivot-table tbody tr td span,
+.print-wrapper .dashboard-section table.pivot-table tbody tr th span,
+.print-wrapper .dashboard-section table.pivot-table thead tr td span,
+.print-wrapper .dashboard-section table.pivot-table thead tr th span {
+  line-height: 1;
+  padding: 0;
+}
+/* line 366, print.scss */
+.print-wrapper section.block .hierarchy ul li, .print-wrapper section.block .hierarchy ul li ul li,
+.print-wrapper .dashboard-section .hierarchy ul li,
+.print-wrapper .dashboard-section .hierarchy ul li ul li {
+  border: 0;
+  background: none;
+  font-size: 9pt;
+}
+/* line 371, print.scss */
+.print-wrapper section.block .hierarchy ul li .testUnderPanel,
+.print-wrapper .dashboard-section .hierarchy ul li .testUnderPanel {
+  width: 45%;
+  padding-left: 0;
+}
+/* line 374, print.scss */
+.print-wrapper section.block .hierarchy ul li .testUnderPanel .visit-start-date,
+.print-wrapper .dashboard-section .hierarchy ul li .testUnderPanel .visit-start-date {
+  margin-right: 0;
+}
+/* line 379, print.scss */
+.print-wrapper section.block table.ipd-investigation-print,
+.print-wrapper .dashboard-section table.ipd-investigation-print {
+  border-collapse: collapse;
+  border-bottom: 1px solid #ddd;
+  table-layout: fixed;
+  font-size: 8pt;
+}
+/* line 386, print.scss */
+.print-wrapper section.block table.ipd-investigation-print tbody tr th, .print-wrapper section.block table.ipd-investigation-print tbody tr td, .print-wrapper section.block table.ipd-investigation-print thead tr th, .print-wrapper section.block table.ipd-investigation-print thead tr td,
+.print-wrapper .dashboard-section table.ipd-investigation-print tbody tr th,
+.print-wrapper .dashboard-section table.ipd-investigation-print tbody tr td,
+.print-wrapper .dashboard-section table.ipd-investigation-print thead tr th,
+.print-wrapper .dashboard-section table.ipd-investigation-print thead tr td {
+  border: 1px solid #ddd;
+  border-width: 1px 1px 0 0;
+  display: table-cell;
+  font-weight: normal;
+  background: #fff;
+  height: 15px;
+}
+/* line 394, print.scss */
+.print-wrapper section.block table.ipd-investigation-print tbody tr td, .print-wrapper section.block table.ipd-investigation-print thead tr td,
+.print-wrapper .dashboard-section table.ipd-investigation-print tbody tr td,
+.print-wrapper .dashboard-section table.ipd-investigation-print thead tr td {
+  padding: 0;
+}
+/* line 398, print.scss */
+.print-wrapper section.block table.ipd-investigation-print tbody tr th, .print-wrapper section.block table.ipd-investigation-print thead tr th:first-child,
+.print-wrapper .dashboard-section table.ipd-investigation-print tbody tr th,
+.print-wrapper .dashboard-section table.ipd-investigation-print thead tr th:first-child {
+  border-left: 1px solid #ddd;
+  width: 38%;
+}
+/* line 403, print.scss */
+.print-wrapper section.block table.ipd-investigation-print span.range,
+.print-wrapper .dashboard-section table.ipd-investigation-print span.range {
+  font-size: 8pt;
+}
+/* line 406, print.scss */
+.print-wrapper section.block table.ipd-investigation-print span.is-abnormal,
+.print-wrapper .dashboard-section table.ipd-investigation-print span.is-abnormal {
+  font-weight: bold;
+}
+/* line 409, print.scss */
+.print-wrapper section.block table.ipd-investigation-print span.ipd-test-results,
+.print-wrapper .dashboard-section table.ipd-investigation-print span.ipd-test-results {
+  white-space: normal;
+  text-overflow: initial;
+  padding: 0px 5px;
+  border-right-color: #ddd;
+  display: inline-block;
+  float: left;
+}
+/* line 423, print.scss */
+.print-wrapper .dashboard-patientInformation-section table.patient .value {
+  width: auto;
+}
+/* line 426, print.scss */
+.print-wrapper .dashboard-patientInformation-section table.patient .patient-img {
+  display: none;
+}
+/* line 429, print.scss */
+.print-wrapper .dashboard-patientInformation-section table.patient .patient-info td {
+  background: none;
+}
+/* line 432, print.scss */
+.print-wrapper .dashboard-patientInformation-section table.patient .patient-value {
+  display: block;
+  width: auto;
+  float: left;
+}
+/* line 436, print.scss */
+.print-wrapper .dashboard-patientInformation-section table.patient .patient-value .patient-name {
+  font-size: 10pt;
+}
+/* line 439, print.scss */
+.print-wrapper .dashboard-patientInformation-section table.patient .patient-value .patient-gender-age {
+  font-size: 9pt;
+}
+/* line 444, print.scss */
+.print-wrapper .dashboard-patientInformation-section table.patient .address .name {
+  display: none;
+}
+/* line 450, print.scss */
+.print-wrapper .diagnosis-name.ruled-out {
+  text-decoration: line-through;
+}
+/* line 456, print.scss */
+.print-wrapper .dashboard-radiology-section ul,
+.print-wrapper .disposition-section ul,
+.print-wrapper .radiology-investigations ul {
+  border: 0;
+}
+/* line 459, print.scss */
+.print-wrapper .dashboard-radiology-section li,
+.print-wrapper .disposition-section li,
+.print-wrapper .radiology-investigations li {
+  border: 0;
+}
+/* line 461, print.scss */
+.print-wrapper .dashboard-radiology-section li a,
+.print-wrapper .disposition-section li a,
+.print-wrapper .radiology-investigations li a {
+  padding: 1px 5px;
+  font-size: 7.5pt;
+}
+/* line 467, print.scss */
+.print-wrapper .disposition-state {
+  font-size: 10pt;
+}
+/* line 469, print.scss */
+.print-wrapper .disposition-state .disposition-by {
+  display: none;
+}
+/* line 474, print.scss */
+.print-wrapper .dashboard-laborders-section table tr td .date {
+  display: none;
+}
+/* line 477, print.scss */
+.print-wrapper .dashboard-laborders-section table tr td .value {
+  width: 60%;
+}
+/* line 482, print.scss */
+.print-wrapper .diagnosis table .date, .print-wrapper .diagnosis table .toggle-btn {
+  display: none;
+}
+/* line 486, print.scss */
+.print-wrapper .notes {
+  padding: 0px 5px 2px 20px;
+  font-size: 8pt;
+  background: none;
+  color: #999;
+}
+/* line 491, print.scss */
+.print-wrapper .notes.test-notes i[class^=icon-] {
+  padding: 0;
+}
+/* line 494, print.scss */
+.print-wrapper .notes.print-notes {
+  display: block !important;
+}
+/* line 497, print.scss */
+.print-wrapper .notes pre,
+.print-wrapper .notes .content {
+  color: #999;
+  font-size: 8pt;
+}
+/* line 502, print.scss */
+.print-wrapper .notes .footer-note .provider {
+  display: none;
+}
+/* line 506, print.scss */
+.print-wrapper .expander-row,
+.print-wrapper .laborder-section li {
+  padding: 0 5px;
+}
+/* line 510, print.scss */
+.print-wrapper .is-abnormal {
+  color: #000 !important;
+}
+/* line 513, print.scss */
+.print-wrapper button.toggle {
+  display: none;
+}
+/* line 516, print.scss */
+.print-wrapper .visits-nav-bar {
+  display: none;
+}
+/* line 518, print.scss */
+.print-wrapper .visits-nav-bar .prev-visit, .print-wrapper .visits-nav-bar .next-visit {
+  display: none;
+}
+/* line 521, print.scss */
+.print-wrapper .visits-nav-bar .visit-details {
+  background: none;
+  border: 0;
+  font-family: Arial, sans-serif;
+}
+/* line 526, print.scss */
+.print-wrapper .visits-nav-bar .visit-date {
+  font-family: Arial, sans-serif;
+}
+/* line 530, print.scss */
+.print-wrapper .ipd-treatment-section {
+  display: none;
+}
+/* line 533, print.scss */
+.print-wrapper table.drug-order-table td.drug {
+  border-left: 0 !important;
+}
+
+/* line 540, print.scss */
+.prescription-print table tr td, .prescription-print table tr th {
+  font-size: 9pt;
+  min-width: 1.75cm;
+}
+/* line 546, print.scss */
+.prescription-print .patient-info {
+  margin-bottom: 10px;
+}
+/* line 548, print.scss */
+.prescription-print .patient-info td {
+  font-weight: bold;
+}
+/* line 550, print.scss */
+.prescription-print .patient-info td .value {
+  font-weight: normal;
+}
+/* line 556, print.scss */
+.prescription-print .treatment-section .drug-name, .prescription-print .treatment-section .dosage-days {
+  width: 7cm;
+}
+/* line 559, print.scss */
+.prescription-print .treatment-section .dosage-form span {
+  float: left;
+  margin-right: 5px;
+}

@@ -1,0 +1,57 @@
+<div class="login">
+
+    <header class="reg-header">
+        Login
+    </header>
+
+    <form ng-submit="login()" name="loginForm" bm-form autofillable="true">
+        <div class="login-body">
+            <div class="note-container">
+                <div class="note error" ng-show="errorMessage">
+                    <div class="text">
+                        {{errorMessage}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="field-attribute">
+                    <label for="username">
+                        Username <span class="asterick">*</span>
+                    </label>
+                </div>
+
+                <div class="field-value">
+                    <input type="text" name="username" id="username" ng-model="loginInfo.username" autofocus="autofocus" required placeholder="Enter your username">
+                </div>
+            </div>
+            <div class="form-field">
+                <div class="field-attribute">
+                    <label for="password">
+                        Password <span class="asterick">*</span>
+                    </label>
+                </div>
+                <div class="field-value">
+                    <input type="password" id="password" name="password" ng-model="loginInfo.password" required placeholder="Enter your password">
+                </div>
+            </div>
+
+            <div class="form-field">
+                <div class="field-attribute">
+                    <label for="location">
+                        Location <span class="asterick">*</span>
+                    </label>
+                </div>
+                <div class="field-value">
+                    <select id="location" ng-model="loginInfo.currentLocation" ng-options="item as item.display for item in locations" required>
+                        <option value="">Select Location</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit" class="confirm">Login</button>
+            </div>
+        </div>
+    </form>
+
+</div>

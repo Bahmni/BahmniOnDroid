@@ -1,0 +1,50 @@
+<div class="patient-search-wrapper">
+    <div class="tabs">
+        <ul>
+            <li class="tab-item" ng-repeat="searchType in search.searchTypes" ng-class="{'tab-selected': search.isSelectedSearch(searchType)}">
+                <a href="" ng-click="search.switchSearchType(searchType)">
+                    <span>{{searchType.display}}</span>
+                    <span ng-if="search.showPatientCountOnSearchParameter(searchType)">({{search.searchResults.length}})</span>
+                    <span ng-if="searchType.handler && !search.showPatientCountOnSearchParameter(searchType)" scheduler watch-on="search.searchParameter" refresh-time="searchType.refreshTime" trigger-function="getPatientCount(searchType)">({{searchType.patientCount}})</span>
+                </a>
+            </li>
+        </ul> 
+    </div>
+    <div class="tab-content" ng-if="search.searchTypes.length">
+        <span ng-if="search.isCurrentSearchLookUp()">
+            <form name="filterPatients" ng-submit="filterPatientsAndSubmit()">
+                <div class="search-wrapper">
+                    <input type="text" id="patientIdentifier" ng-model="search.searchParameter" focus-on="search.startPatientSearch" ng-change="search.filterPatients()"/>
+                </div>
+            </form>
+        </span>
+        <span ng-if="!search.isCurrentSearchLookUp()">    
+            <form name="searchPatientForm" ng-submit="searchPatients()"> 
+                <div class="search-patient-id left">
+                    <input type="text" id="patientIdentifier" ng-model="search.searchParameter" focus-on="search.startPatientSearch" placeholder="Search Name/ID  ..."/>
+                </div>
+
+                <div class="reg-srch-btn left">
+                    <button type="submit" ng-disabled="!search.searchParameter">
+                        <i class="icon-search"></i>
+                        Search
+                    </button>
+                </div>
+            </form>
+        </span>        
+        <resize search-results="search.searchResults" visible-results="search.visiblePatients" class="active-visits">
+            <li ng-repeat="patient in search.visiblePatients" class="active-patient" ng-click="forwardPatient(patient)">
+                <img class="smallImages" ng-src="{{patient.image}}" onerror="this.onerror=null;this.src='../images/blank-user.png'">
+                <div class="patient-name">{{patient.name}}</div>
+                <div class="patient-id">{{patient.identifier}}</div>
+            </li>
+            <div class="note-container" ng-if="search.noResultsMessage">
+                <div class="note warning">
+                    <div class="text">
+                        <p class="ng-binding">{{search.noResultsMessage}}</p>
+                    </div>
+                </div>
+            </div>
+        </resize>
+    </div>
+</div>

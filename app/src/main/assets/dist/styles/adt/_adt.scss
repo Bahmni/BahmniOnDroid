@@ -1,0 +1,66 @@
+.adt {
+
+    .adt-disposition-action {
+        margin: 5px 5px 0 0;
+    }
+    select.disposition-action {
+        color: #363463;
+        display: block;
+        padding: 5px 10px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        background-color: #FFF;
+        border: 1px solid #DDD;
+    }
+    .patient-disposition-status {
+        color: green;
+        padding-top: 10px;
+    }
+    .form-horizontal fieldset label {
+        text-align: left;
+        margin-left: 0;
+        padding-bottom: 5px;
+    }
+    .form-group .field-value textarea {
+        width: 97.5%;
+        margin-bottom: 5px;
+    }
+}
+
+div[ng-app="adt"] {
+    .patient-details {
+        position: relative;
+        z-index: 1111;
+        top: 17px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $lightestGray;
+    }
+    .ward-list {
+        .section-grid {
+            margin-bottom: 10px;
+        }
+        .section-title {
+            cursor: pointer;
+            small {
+                color: beige;
+            }
+        }
+    }
+    .ward-details-cell {
+        padding: 0;
+    }
+    .ward-details-container {
+        width: 100%;
+        max-width: $max-page-width;
+        overflow-x: auto;
+        table {
+            font-size: 14px;
+        }
+    }
+    .box {
+        @media screen and (max-width: 859px) {
+            margin-bottom: 15px;
+        }
+    }
+}

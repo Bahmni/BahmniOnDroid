@@ -1,0 +1,128 @@
+.touch {
+    body.ngdialog-open {
+       #ClinicalController {
+            display: none !important;
+        } 
+        .ngdialog{
+            position: absolute !important;
+        }
+    }
+    
+}
+
+.ngdialog-close:before {
+    display: none;
+    content: "";
+}
+
+.template-header {
+    height: 50px;
+    background: $bahmniSecondaryColor;
+    border-radius: 0;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    h5 {
+        display: inline-block;
+        color: $lightestGray;
+        line-height: 50px;
+        padding: 0 0 0 20px;
+        font-size: 16px;
+        margin: 0;
+    }
+    h6 {
+        display: inline-block;
+        width: auto;
+        float: right;
+        margin: 15px 0px;
+        border-bottom: 0!important;
+        color: $white;
+        font-size: 16px;
+    }
+}
+
+.template-container {
+    padding: 65px 20px;
+    section {
+        margin-bottom: 15px;
+        section, table {
+            margin: 0;
+        }
+        &.treatment-section {
+            @extend %section-grid;
+        }
+    }
+
+    table {
+        margin-top: 5px;
+    }
+    .ipd-investigation tr th {
+        background: $lightestGray;
+    }
+    td.value {
+        width: 50%;
+    }
+    table.ipd-investigation td {
+        display: block;
+        height: 2em;
+        text-align: left;
+    }
+}
+
+.ngdialog-content {
+    font-size: 14px!important;
+    color: $darkGray;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    clear: both;
+    table {
+        th {
+            background: $lightestGray;
+            background-image: none;
+            color: $mediumGray;
+            padding: 5px 10px;
+        }      
+        tr:nth-child(even), tr:nth-child(odd) {
+            background: $white;
+        }
+        tr th, tr td {
+            font-size: 14px;
+            color: $darkGray;
+            border: 0;
+        }
+        &.h-scroll, &.pivot-table {
+            tr td, tr th {
+                border-bottom: 1px solid $lighterGray; 
+            }
+        }
+    }
+
+    .treatment-section {
+        table tr {
+            td.days {
+                width: 150px;
+            }
+            td.dosage {
+                width: 40%;
+                font-size: 14px;
+            }
+        }
+    }
+}
+div.ngdialog-close {
+    color: transparent;
+}
+.dashboard-treatment-section, .dashboard-laborders-section, .dashboard-visits-section, .dashboard-more-info {
+
+}
+
+.dialog-button-group {
+    margin-top: 10px; clear: both;
+    button:focus {outline: 2px solid $clinicalFormFocus;}
+}

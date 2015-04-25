@@ -1,0 +1,19 @@
+<div class="ward-list">
+    <h3>Ward List</h3>
+
+    <div ng-repeat="ward in wards">
+        <div class="section-grid">
+            <h2 class="section-title" ng-click="toggle(ward)">
+                <i class="icon-caret-right" ng-show="!ward.showDetails"></i>
+                <i class="icon-caret-down" ng-show="ward.showDetails"></i>
+                <span class="section-title-text">
+                    {{ward.ward.name}} - 
+                    <small>(Total Beds: {{ward.totalBeds}} | Available Beds: {{ward.totalBeds-ward.occupiedBeds}})</small>
+                </span>
+            </h2>
+            <div class="section-content" ng-if="ward.showDetails">
+                <table-details params="getParams(ward)"></table-details>
+            </div>
+        </div>
+    </div>
+</div>

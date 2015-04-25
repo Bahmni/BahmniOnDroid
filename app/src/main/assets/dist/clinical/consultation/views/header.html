@@ -1,0 +1,27 @@
+<div class="opd-header-wrapper clinical-consultation" id="opd-tabs">
+
+    <div class="opd-header-bottom tabs">    
+        <bm-back-links></bm-back-links>
+       
+        <a class="back-btn-link" id="dashboard-link" ng-click="gotoPatientDashboard()" title="Back to {{patient.name}} Dashboard">
+              <img ng-src="{{patient.image}}" onerror="this.onerror=null;this.src='../images/blank-user.gif'">
+              <span class="patient-info">
+                <span class="patient-name">{{patient.name}} </span>
+                <span class="patient-id">{{patient.identifier}}</span>
+            </span>
+        </a>
+           
+
+        <ul class="header-tabs">
+            <li class="tab-item" ng-repeat="board in availableBoards" ng-class="{'tab-selected':currentBoard.label==board.label}">
+                <a ng-click="showBoard(board.label)">{{board.label}}</a>
+            </li>
+        </ul>
+
+        <button class="toggle-patient" ng-click="toggleControlPanel()" ng-class="{'shift': showControlPanel}"></button>
+        <button class="confirm save-consultation" ng-show="availableBoards" ng-click="save()" accesskey="s" class="confirm">
+            <i class="icon-save"></i> 
+            <span class="text"><u>S</u>ave</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,117 @@
+<section ng-controller="PatientCommonController">
+    <article class="form-field" ng-if="patientConfiguration.local()['showNameField']">
+        <div class="field-attribute">
+            <label for="patientName">{{patientConfiguration.local()['labelForNameField']}}</label>
+        </div>
+        <div class="field-value" id="patientNameLocal">
+            <input type="text" id="givenNameLocal" ng-model="patient.givenNameLocal" placeholder="{{patientConfiguration.local()['placeholderForGivenName']}}" focus-me="true">
+            <input ng-show="showMiddleName" type="text" id="middleNameLocal" ng-model="patient.middleNameLocal" placeholder="{{patientConfiguration.local()['placeholderForMiddleName']}}">
+            <input type="text" id="familyNameLocal" ng-model="patient.familyNameLocal" placeholder="{{patientConfiguration.local()['placeholderForFamilyName']}}">
+        </div>
+    </article>
+    <article class="form-field">
+        <div class="field-attribute">
+            <label for="patientName">Patient Name <span class="asterick">*</span></label>
+        </div>
+
+        <div class="field-value" id="patientName">
+
+            <span data-ng-switch="isAutoComplete('givenName')" ng-if="patientConfiguration.local()['showNameField']">
+                <input data-ng-switch-when="true" type="text" id="givenName" ng-model="$parent.patient.givenName" non-blank my-autocomplete source="getAutoCompleteList" response-map="getDataResults" data-item-type="personName" placeholder="First Name" title="Enter patient's first name.">
+
+                <input data-ng-switch-default type="text" id="givenName" ng-model="patient.givenName" non-blank placeholder="First Name" title="Enter patient's first name.">
+            </span>
+
+            <span data-ng-switch="isAutoComplete('givenName')" ng-if="!patientConfiguration.local()['showNameField']">
+                <input data-ng-switch-when="true" type="text" id="givenName" ng-model="$parent.patient.givenName" non-blank my-autocomplete source="getAutoCompleteList" response-map="getDataResults" data-item-type="personName" placeholder="First Name" title="Enter patient's first name." focus-me="true">
+
+                <input data-ng-switch-default type="text" id="givenName" ng-model="patient.givenName" non-blank placeholder="First Name" title="Enter patient's first name." focus-me="true">
+            </span>
+
+            <span ng-show="showMiddleName" data-ng-switch="isAutoComplete('middleName')">
+                <input data-ng-switch-when="true" type="text" id="middleName" ng-model="$parent.patient.middleName" my-autocomplete source="getAutoCompleteList" response-map="getDataResults" data-item-type="personName" placeholder="Middle Name" title="Enter patient's middle name.">
+
+                <input data-ng-switch-default type="text" id="middleName" ng-model="patient.middleName" placeholder="Middle Name" title="Enter patient's middle name.">
+            </span>
+
+            <span data-ng-switch="isAutoComplete('familyName')">
+                <input data-ng-switch-when="true" type="text" id="familyName" ng-model="$parent.patient.familyName" non-blank my-autocomplete source="getAutoCompleteList" response-map="getDataResults" data-item-type="personName" placeholder="Last Name" title="Enter patient's last name.">
+
+                <input data-ng-switch-default type="text" id="familyName" ng-model="patient.familyName" non-blank placeholder="Last Name" title="Enter patient's last name.">
+            </span>
+
+            <span class="input-label-inline caste-lastname" ng-show="showCasteSameAsLastName()">
+                <input type="checkbox" id="casteSameAsLastNameCheck" ng-model="patient.sameAsLastName" ng-change="setCasteAsLastName()">
+                <label id="casteSameAsLastNameCheckLabel" for="casteSameAsLastNameCheck">Caste same as Last Name</label>
+            </span>
+        </div>
+    </article>
+</section>
+<section class="form-field-inline form-field-gender">
+    <article class="form-field">
+        <div class="field-attribute">
+            <label for="gender">Gender <span class="asterick">*</span></label>
+        </div>
+
+        <div class="field-value">
+            <select id="gender" ng-model="patient.gender" required="required" title="Select Gender" required="required">
+                <option value="">Select Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="O">Other</option>
+            </select>
+        </div>
+    </article>
+</section>
+<section class="form-field-inline">
+    <article class="form-field">
+            <div class="field-attribute">
+                <label for="ageYears">Age<span class="asterick">*</span></label>
+            </div>
+
+            <div class="field-value age-field">
+                <div class="input-prepend">
+                    <span class="add-on">Years</span>
+                    <input type="number" id="ageYears" name="ageYear" max="120" ng-model="patient.age.years" min="0" ng-required="patient.age.isEmpty()" title="Enter a numeric value for Years.">
+                </div>
+                <div class="input-prepend">
+                    <span class="add-on">Months</span>
+                    <input type="number" id="ageMonths" name="ageMonths" max="12" ng-model="patient.age.months" min="0" title="Enter a numeric value between 0 to 12">
+                </div>
+                <div class="input-prepend">
+                    <span class="add-on">Days</span>
+                    <input type="number" id="ageDays" name="ageDays" max="31" ng-model="patient.age.days" min="0" title="Enter a numeric value between 0 to 31">
+                </div>
+
+            </div>
+    </article>
+    <article class="form-field">
+        <div class="field-attribute">
+            <label for="birthdate">DOB</label>
+        </div>
+        <div class="field-value">
+            <input id="birthdate" type="text" pattern="\d{2}-\d{2}-\d{4}" ng-model="patient.birthdate" datepicker ng-change="patient.calculateAge()" placeholder="dd-mm-yyyy" class="datepicker">
+        </div>
+    </article>
+</section>
+<section address-fields data-address-levels="addressLevels" data-address="patient.address"></section>
+
+<section class="form-field-inline" ng-repeat="attributeRow in patientConfiguration.customAttributeRows()">
+    <article class="form-field" ng-repeat="attribute in attributeRow">
+        <ng-include src="'views/patientAttributeInformation.html'"></ng-include>
+    </article>
+</section>
+
+
+<legend class="mylegend additional-attribute" ng-show="patientConfiguration.additionalAttributes()" toggle="displayAdditionalInformation">
+        <span>
+            <i class="icon-caret-right" ng-hide="displayAdditionalInformation"></i>
+            <i class="icon-caret-down" ng-show="displayAdditionalInformation"></i>
+            <strong><a href accesskey="i">Additional Patient <u>I</u>nformation</a></strong>
+        </span>
+</legend>
+<section class="form-field-inline" ng-show="displayAdditionalInformation">
+    <article class="form-field" ng-repeat="attribute in patientConfiguration.additionalAttributes()">
+        <ng-include src="'views/patientAttributeInformation.html'"></ng-include>
+    </article>
+</section>

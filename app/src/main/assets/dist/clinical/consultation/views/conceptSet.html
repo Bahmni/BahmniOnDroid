@@ -1,0 +1,18 @@
+<div bm-pop-over autoclose="true" class="clinical-observations">
+    <div class="template-control-header">
+        <button bm-pop-over-trigger><i class="icon-th"></i></button>
+    </div>
+    <div class="template-control-panel primary-section-grid" bm-pop-over-target>
+        <ul class="template-icons">
+            <li ng-repeat="template in consultation.selectedObsTemplate" ng-if="!template.isAdded && !template.alwaysShow">
+                <button ng-click="toggleTemplate(template)">
+                    <i class="icon-check-empty" ng-hide="template.isAdded"></i>
+                    <i class="icon-check" ng-show="template.isAdded"></i>
+                    {{template.label}}
+                </button>
+            </li>
+        </ul>
+    </div>
+    <concept-set-group patient="patient" consultation="consultation" observations="consultation.observations" all-templates="consultation.selectedObsTemplate" context="context" auto-scroll-enabled="scrollingEnabled">
+    </concept-set-group>
+</div>
